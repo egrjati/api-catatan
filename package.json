@@ -17,6 +17,6 @@
     "express": "^5.3.0"
   },
   "devDependencies": {
-    "prisma": "^8.0.0-rc.24"
+    "prisma": "^7.10.1"
   }
 }
