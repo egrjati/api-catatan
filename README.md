@@ -16,7 +16,7 @@
 
 <br/>
 
-## 🪐 Tentang
+## Tentang
 
 **api-catatan** adalah backend (REST API) untuk aplikasi SaaS **catatan pengeluaran** — tempat mencatat ke mana uang pergi setiap hari: apa yang dibeli, berapa harganya, kapan, dan masuk kategori apa.
 
@@ -24,7 +24,7 @@ Repo ini **khusus untuk API**. Tampilan (frontend) akan dibangun terpisah dan be
 
 <br/>
 
-## 🛰️ Tech Stack
+## Tech Stack
 
 <div align="center">
 
@@ -44,32 +44,32 @@ Repo ini **khusus untuk API**. Tampilan (frontend) akan dibangun terpisah dan be
 
 <br/>
 
-## 🌌 Struktur Proyek
+## Struktur Proyek
 
 ```
 api-catatan/
 ├── prisma/
-│   ├── migrations/          # riwayat migrasi database
-│   └── schema.prisma        # definisi model data
+│   ├── migrations/
+│   └── schema.prisma
 ├── src/
-│   ├── generated/prisma/    # Prisma Client hasil generate (tidak di-commit)
+│   ├── generated/prisma/
 │   ├── lib/
-│   │   └── prisma.js        # Prisma Client yang dipakai bersama
-│   ├── app.js               # konfigurasi Express & route
-│   └── server.js            # titik masuk, menjalankan server
-├── bruno/                   # koleksi request untuk uji API
-├── prisma7.config.ts        # konfigurasi Prisma
-└── .env.example             # contoh variabel lingkungan
+│   │   └── prisma.js
+│   ├── app.js
+│   └── server.js
+├── bruno/
+├── prisma7.config.ts
+└── .env.example
 ```
 
 <br/>
 
-## 🚀 Memulai
+## Memulai
 
 ### Prasyarat
 
 - Node.js 20+
-- MySQL yang sudah berjalan
+- MySQL sudah berjalan
 
 ### 1 · Clone & install
 
@@ -77,23 +77,6 @@ api-catatan/
 git clone https://github.com/egrjati/api-catatan.git
 cd api-catatan
 npm install
-```
-
-### 2 · Atur environment
-
-Salin `.env.example` menjadi `.env`, lalu isi dengan kredensial database kamu:
-
-```env
-DATABASE_URL="mysql://USER:PASSWORD@127.0.0.1:3307/api_catatan"
-```
-
-### 3 · Siapkan database
-
-File konfigurasi Prisma bernama `prisma7.config.ts`, jadi sertakan `--config`:
-
-```bash
-npx prisma migrate dev --config prisma7.config.ts
-npx prisma generate --config prisma7.config.ts
 ```
 
 ### 4 · Jalankan server
@@ -110,22 +93,22 @@ Server meluncur di **http://localhost:3000** ✦
 
 **`Pengeluaran`**
 
-| Field       | Tipe       | Keterangan                       |
-| ----------- | ---------- | -------------------------------- |
-| `id`        | `String`   | UUID, dibuat otomatis            |
-| `nama`      | `String`   | Nama barang / pengeluaran        |
-| `harga`     | `Int`      | Nominal dalam Rupiah             |
-| `tanggal`   | `Date`     | Tanggal pengeluaran              |
-| `kategori`  | `String`   | Contoh: makanan, transport       |
-| `createdAt` | `DateTime` | Waktu data dibuat, otomatis      |
+| Field       | Tipe       | Keterangan                  |
+| ----------- | ---------- | --------------------------- |
+| `id`        | `String`   | UUID, dibuat otomatis       |
+| `nama`      | `String`   | Nama barang / pengeluaran   |
+| `harga`     | `Int`      | Nominal dalam Rupiah        |
+| `tanggal`   | `Date`     | Tanggal pengeluaran         |
+| `kategori`  | `String`   | Contoh: makanan, transport  |
+| `createdAt` | `DateTime` | Waktu data dibuat, otomatis |
 
 <br/>
 
 ## 📡 Endpoint
 
-| Method | Endpoint | Deskripsi            | Status |
-| :----: | -------- | -------------------- | :----: |
-| `GET`  | `/`      | Cek status API       |   ✅   |
+| Method | Endpoint | Deskripsi      | Status |
+| :----: | -------- | -------------- | :----: |
+| `GET`  | `/`      | Cek status API |   ✅   |
 
 <details>
 <summary><b>Contoh respons</b></summary>
@@ -154,19 +137,11 @@ Server meluncur di **http://localhost:3000** ✦
 
 <br/>
 
-## 👨‍🚀 Pembuat
-
 <div align="center">
 
 Dibuat oleh **[egrjati](https://github.com/egrjati)**
 
 <a href="https://enggar.pics"><img src="https://img.shields.io/badge/enggar.pics-000000?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
 <a href="https://instagram.com/egrjati"><img src="https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
-
-<br/><br/>
-
-<sub>✦ &nbsp;˚ &nbsp;· &nbsp;Setiap rupiah punya orbitnya sendiri. &nbsp;· &nbsp;˚ &nbsp;✦</sub>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:161b22,50:0d1117,100:000000&height=120&section=footer" width="100%" alt="footer" />
 
 </div>
