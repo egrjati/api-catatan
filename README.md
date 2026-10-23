@@ -8,12 +8,9 @@
 
 <br/>
 
-<img src="https://img.shields.io/badge/Node.js-000000?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
-<img src="https://img.shields.io/badge/Express_5-000000?style=flat-square&logo=express&logoColor=white" alt="Express" />
-<img src="https://img.shields.io/badge/Prisma_7-000000?style=flat-square&logo=prisma&logoColor=white" alt="Prisma" />
-<img src="https://img.shields.io/badge/MySQL-000000?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
-<img src="https://img.shields.io/badge/Bruno-000000?style=flat-square&logo=bruno&logoColor=white" alt="Bruno" />
-<img src="https://img.shields.io/badge/status-in_orbit-000000?style=flat-square&logo=rocket&logoColor=white" alt="Status" />
+<img src="https://img.shields.io/badge/status-in_orbit-161b22?style=flat-square&labelColor=000000&logo=rocket&logoColor=white" alt="Status" />
+<img src="https://img.shields.io/badge/version-1.0.0-161b22?style=flat-square&labelColor=000000" alt="Version" />
+<img src="https://img.shields.io/badge/node-20%2B-161b22?style=flat-square&labelColor=000000&logo=nodedotjs&logoColor=white" alt="Node 20+" />
 
 </div>
 
@@ -33,16 +30,17 @@ Repo ini **khusus untuk API**. Tampilan (frontend) akan dibangun terpisah dan be
 
 <img src="https://skillicons.dev/icons?i=nodejs,express,prisma,mysql,git&theme=dark" alt="Tech stack" />
 
-</div>
+<br/><br/>
 
-| Lapisan        | Teknologi                                        |
-| -------------- | ------------------------------------------------ |
-| Runtime        | Node.js (ES Modules)                             |
-| Framework      | Express 5                                        |
-| ORM            | Prisma 7 + `@prisma/adapter-mariadb`             |
-| Database       | MySQL                                            |
-| Dev server     | `tsx watch` (auto-reload)                        |
-| Uji API        | [Bruno](https://www.usebruno.com/) (folder `bruno/`) |
+<img src="https://img.shields.io/badge/Runtime-Node.js-161b22?style=flat-square&labelColor=000000&logo=nodedotjs&logoColor=white" alt="Runtime: Node.js" />
+<img src="https://img.shields.io/badge/Framework-Express_5-161b22?style=flat-square&labelColor=000000&logo=express&logoColor=white" alt="Framework: Express 5" />
+<img src="https://img.shields.io/badge/ORM-Prisma_7-161b22?style=flat-square&labelColor=000000&logo=prisma&logoColor=white" alt="ORM: Prisma 7" />
+<br/>
+<img src="https://img.shields.io/badge/Database-MySQL-161b22?style=flat-square&labelColor=000000&logo=mysql&logoColor=white" alt="Database: MySQL" />
+<img src="https://img.shields.io/badge/Dev_Server-tsx_watch-161b22?style=flat-square&labelColor=000000&logo=typescript&logoColor=white" alt="Dev server: tsx watch" />
+<img src="https://img.shields.io/badge/Uji_API-Bruno-161b22?style=flat-square&labelColor=000000&logo=bruno&logoColor=white" alt="Uji API: Bruno" />
+
+</div>
 
 <br/>
 
