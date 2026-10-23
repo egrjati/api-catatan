@@ -1,3 +1,4 @@
+// LAYER KOKI
 import { prisma } from "../../lib/prisma.js";
 
 // export => "agar bisa di import controller"
@@ -10,7 +11,7 @@ export const ambilSemua = async () => {
 };
 
 // Tambah Data
-export const tambah = async (data) => {
+export const tambahData = async (data) => {
   const catatanBaru = await prisma.pengeluaran.create({
     data: {
       nama: data.nama,
