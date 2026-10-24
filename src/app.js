@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.json({ pesan: "API Jalan Nihh Bozz" });
 });
 
-// Semua method (GET, POST, dan lainnya)
+// Pasang routes pengeluaran di awalan /api/pengeluaran (semua method diteruskan ke router)
 app.use("/api/pengeluaran", pengeluaranRoutes);
 
 export default app;
