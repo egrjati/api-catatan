@@ -1,5 +1,5 @@
 // LAYER KOKI
-import { prisma } from "../../lib/prisma.js";
+import prisma from "../../lib/prisma.js";
 
 // export => "agar bisa di import controller"
 export const ambilSemua = async () => {
