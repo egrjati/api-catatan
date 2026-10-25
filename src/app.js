@@ -1,5 +1,6 @@
 import express from "express";
 import pengeluaranRoutes from "./modules/pengeluaran/pengeluaran.routes.js";
+import errorHandler from "./middlewares/errorHandler.js";
 
 const app = express();
 
@@ -13,5 +14,6 @@ app.get("/", (req, res) => {
 
 // Pasang routes pengeluaran di awalan /api/pengeluaran (semua method diteruskan ke router)
 app.use("/api/pengeluaran", pengeluaranRoutes);
+app.use(errorHandler);
 
 export default app;
