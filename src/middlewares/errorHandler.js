@@ -1,3 +1,4 @@
+// Baca err.status (400) → di bawah 500 → kirim pesan asli
 // Kalau 4, fungsi itu dianggap error middleware
 const errorHandler = (err, req, res, next) => {
   console.error(err);
