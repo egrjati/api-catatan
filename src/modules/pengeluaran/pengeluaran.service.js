@@ -1,13 +1,24 @@
 // LAYER KOKI
 import prisma from "../../lib/prisma.js";
 
+const rapikanTanggal = (catatan) => {
+  return {
+    ...catatan,
+    tanggal: catatan.tanggal.toISOString().slice(0, 10),
+  };
+};
+
 // export => "agar bisa di import controller"
+// ambilsemua catatan dari DB
 export const ambilSemua = async () => {
   // .pengeluaran berasal dari model Pengeluaran di schema.prisma | .findMany() === SELECT * FROM pengeluaran
   const semuaCatatan = await prisma.pengeluaran.findMany({
     orderBy: { tanggal: "desc" },
   });
-  return semuaCatatan;
+  // maping, menjalankan rapikanTanggal untuk setiap catatan
+  return semuaCatatan.map((catatan) => {
+    return rapikanTanggal(catatan);
+  });
 };
 
 // Tambah Data
@@ -20,5 +31,5 @@ export const tambahData = async (data) => {
       kategori: data.kategori,
     },
   });
-  return catatanBaru;
+  return rapikanTanggal(catatanBaru);
 };
