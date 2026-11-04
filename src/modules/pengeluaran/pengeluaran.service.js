@@ -13,7 +13,7 @@ const rapikanTanggal = (catatan) => {
 export const ambilSemua = async () => {
   // .pengeluaran berasal dari model Pengeluaran di schema.prisma | .findMany() === SELECT * FROM pengeluaran
   const semuaCatatan = await prisma.pengeluaran.findMany({
-    orderBy: { tanggal: "desc" },
+    orderBy: [{ tanggal: "desc" }, { createdAt: "desc" }],
   });
   // maping, menjalankan rapikanTanggal untuk setiap catatan
   return semuaCatatan.map((catatan) => {
