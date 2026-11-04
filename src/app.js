@@ -15,7 +15,9 @@ app.get("/", (req, res) => {
 });
 
 // Pasang routes pengeluaran di awalan /api/pengeluaran (semua method diteruskan ke router)
+// Endpoint /pengeluaran
 app.use("/api/pengeluaran", pengeluaranRoutes);
+
 // daftarkan errorHandler ke express
 app.use(errorHandler);
 
