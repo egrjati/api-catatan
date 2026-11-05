@@ -1,16 +1,16 @@
 // LAYER KOKI
 import prisma from "../../lib/prisma.js";
 
-const rapikanTanggal = (catatan) => {
+function rapikanTanggal(catatan) {
   return {
     ...catatan,
     tanggal: catatan.tanggal.toISOString().slice(0, 10),
   };
-};
+}
 
 // export => "agar bisa di import controller"
 // ambilsemua catatan dari DB
-export const ambilSemua = async () => {
+export async function ambilSemua() {
   // .pengeluaran berasal dari model Pengeluaran di schema.prisma | .findMany() === SELECT * FROM pengeluaran
   const semuaCatatan = await prisma.pengeluaran.findMany({
     orderBy: [{ tanggal: "desc" }, { createdAt: "desc" }],
@@ -19,10 +19,10 @@ export const ambilSemua = async () => {
   return semuaCatatan.map((catatan) => {
     return rapikanTanggal(catatan);
   });
-};
+}
 
 // Tambah Data
-export const tambahData = async (data) => {
+export async function tambahData(data) {
   const catatanBaru = await prisma.pengeluaran.create({
     data: {
       nama: data.nama,
@@ -32,4 +32,10 @@ export const tambahData = async (data) => {
     },
   });
   return rapikanTanggal(catatanBaru);
-};
+}
+
+// Hapud Data
+export async function hapusData(id) {
+  const catatanDihapus = await prisma.pengeluaran.delete({ where: { id } });
+  return rapikanTanggal(catatanDihapus);
+}
