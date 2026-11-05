@@ -3,6 +3,11 @@
 const errorHandler = (err, req, res, next) => {
   console.error(err);
 
+  if (err.code === "P2025") {
+    err.status = 404;
+    err.message = "Data tidak ditemukan";
+  }
+
   const status = err.status ?? 500;
   const pesan = status < 500 ? err.message : "Terjadi kesalahan di server";
 
