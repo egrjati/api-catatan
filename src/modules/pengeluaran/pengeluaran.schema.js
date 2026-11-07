@@ -16,7 +16,8 @@ export const schemaTambahPengeluaran = z.object({
     })
     .trim()
     .min(1, "Nama wajib diisi")
-    .max(50, "Nama maksimal 50 karakter"),
+    .max(50, "Nama maksimal 50 karakter")
+    .regex(/[a-zA-Z]/, "Nama harus mengandung huruf"),
   harga: z
     .int({
       error: (iss) =>
