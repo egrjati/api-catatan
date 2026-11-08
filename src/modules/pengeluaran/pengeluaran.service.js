@@ -39,3 +39,17 @@ export async function hapusData(id) {
   const catatanDihapus = await prisma.pengeluaran.delete({ where: { id } });
   return rapikanTanggal(catatanDihapus);
 }
+
+// Edit Data
+export async function editData(id, data) {
+  const catatanDiEdit = await prisma.pengeluaran.update({
+    where: { id },
+    data: {
+      nama: data.nama,
+      harga: data.harga,
+      tanggal: new Date(data.tanggal),
+      kategori: data.kategori,
+    },
+  });
+  return rapikanTanggal(catatanDiEdit);
+}
