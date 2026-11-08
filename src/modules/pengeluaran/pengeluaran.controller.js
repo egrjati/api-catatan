@@ -16,3 +16,9 @@ export async function hapusData(req, res) {
   const catatanDihapus = await service.hapusData(id);
   res.status(200).json(catatanDihapus);
 }
+
+export async function editData(req, res) {
+  const { id } = req.params;
+  const catatanDiEdit = await service.editData(id, req.body);
+  res.status(200).json(catatanDiEdit);
+}

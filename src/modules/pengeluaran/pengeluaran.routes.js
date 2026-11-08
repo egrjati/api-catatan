@@ -8,6 +8,7 @@ const router = Router();
 
 router.get("/", controller.ambilSemua);
 router.post("/", validate(schemaTambahPengeluaran), controller.tambahData);
+router.put("/:id", validate(schemaTambahPengeluaran), controller.editData);
 router.delete("/:id", controller.hapusData);
 
 export default router;
