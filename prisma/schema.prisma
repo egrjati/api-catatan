@@ -8,11 +8,24 @@ datasource db {
   provider = "mysql"
 }
 
+// Table Pengeluaran
+// 1 pengeluaran punya 1 kategori
 model Pengeluaran {
   id        String   @id @default(uuid())
   nama      String
   harga     Int
   tanggal   DateTime @db.Date
-  kategori  String
+  kategoriId  String
+  kategori Kategori @relation(fields: [kategoriId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+// Table Kategori
+// 1 Kategori punya banyak pengeluaran
+model Kategori {
+  id String @id @default(uuid())
+  nama String @unique
+  warna String
+  pengeluaran Pengeluaran[]
   createdAt DateTime @default(now())
 }
