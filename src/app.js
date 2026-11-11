@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import pengeluaranRoutes from "./modules/pengeluaran/pengeluaran.routes.js";
+import kategoriRoutes from "./modules/category/category.routes.js";
 import errorHandler from "./middlewares/errorHandler.js";
 
 const app = express();
@@ -14,9 +15,9 @@ app.get("/", (req, res) => {
   res.json({ pesan: "API Jalan Nihh Bozz" });
 });
 
-// Pasang routes pengeluaran di awalan /api/pengeluaran (semua method diteruskan ke router)
-// Endpoint /pengeluaran
+// Daftarkan Endpoint /pengeluaran
 app.use("/api/pengeluaran", pengeluaranRoutes);
+app.use("/api/categories", kategoriRoutes);
 
 // daftarkan errorHandler ke express
 app.use(errorHandler);
