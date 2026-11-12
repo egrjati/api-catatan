@@ -8,5 +8,6 @@ const router = Router();
 // GET /api/categories → ambil semua kategori
 router.get("/", controller.ambilSemua);
 router.post("/", validate(createCategorySchema), controller.tambahCategory);
+router.put("/:id", validate(createCategorySchema), controller.editCategory);
 
 export default router;
