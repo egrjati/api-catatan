@@ -1,0 +1,27 @@
+info:
+  name: Edit Kategori
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/categories/:id"
+  params:
+    - name: id
+      value: 1033afde-c8b5-49db-87b2-e324d149af3abb
+      type: path
+  body:
+    type: json
+    data: |2-
+        {
+          "nama": "Transport",
+          "warna": "#F332F3"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
