@@ -8,6 +8,11 @@ const errorHandler = (err, req, res, next) => {
     err.message = "Data tidak ditemukan";
   }
 
+  if (err.code === "P2002") {
+    err.status = 409;
+    err.message = "Nama sudah dipakai";
+  }
+
   const status = err.status ?? 500;
   const pesan = status < 500 ? err.message : "Terjadi kesalahan di server";
 
