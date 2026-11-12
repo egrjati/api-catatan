@@ -19,3 +19,15 @@ export async function tambahCategory(data) {
   });
   return dataKategori;
 }
+
+// Put Kategori
+export async function editCategory(id, data) {
+  const updateCategory = await prisma.kategori.update({
+    where: { id },
+    data: {
+      nama: data.nama,
+      warna: data.warna,
+    },
+  });
+  return updateCategory;
+}
