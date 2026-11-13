@@ -9,5 +9,6 @@ const router = Router();
 router.get("/", controller.ambilSemua);
 router.post("/", validate(createCategorySchema), controller.tambahCategory);
 router.put("/:id", validate(createCategorySchema), controller.editCategory);
+router.delete("/:id", controller.hapuscategory);
 
 export default router;
