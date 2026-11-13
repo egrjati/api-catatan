@@ -13,7 +13,10 @@ function rapikanTanggal(catatan) {
 export async function ambilSemua() {
   // .pengeluaran berasal dari model Pengeluaran di schema.prisma | .findMany() === SELECT * FROM pengeluaran
   const semuaCatatan = await prisma.pengeluaran.findMany({
+    // mau diurutkan bagaimana
     orderBy: [{ tanggal: "desc" }, { createdAt: "desc" }],
+    // sertakan data kategori (nama, warna) untuk ditampilkan di frontend
+    include: { kategori: true },
   });
   // maping, menjalankan rapikanTanggal untuk setiap catatan
   return semuaCatatan.map((catatan) => {
@@ -28,13 +31,15 @@ export async function tambahData(data) {
       nama: data.nama,
       harga: data.harga,
       tanggal: new Date(data.tanggal),
-      kategori: data.kategori,
+      kategoriId: data.kategoriId,
     },
+    // sertakan data kategori (nama, warna) untuk ditampilkan di frontend
+    include: { kategori: true },
   });
   return rapikanTanggal(catatanBaru);
 }
 
-// Hapud Data
+// Hapus Data
 export async function hapusData(id) {
   const catatanDihapus = await prisma.pengeluaran.delete({ where: { id } });
   return rapikanTanggal(catatanDihapus);
@@ -48,8 +53,10 @@ export async function editData(id, data) {
       nama: data.nama,
       harga: data.harga,
       tanggal: new Date(data.tanggal),
-      kategori: data.kategori,
+      kategoriId: data.kategoriId,
     },
+    // sertakan data kategori (nama, warna) untuk ditampilkan di frontend
+    include: { kategori: true },
   });
   return rapikanTanggal(catatanDiEdit);
 }
