@@ -13,6 +13,16 @@ const errorHandler = (err, req, res, next) => {
     err.message = "Nama sudah dipakai";
   }
 
+  if (err.code === "P2003") {
+    if (req.method === "DELETE") {
+      err.status = 409;
+      err.message = "Data masih dipakai";
+    } else {
+      err.status = 400;
+      err.message = "Data tidak ditemukan";
+    }
+  }
+
   const status = err.status ?? 500;
   const pesan = status < 500 ? err.message : "Terjadi kesalahan di server";
 

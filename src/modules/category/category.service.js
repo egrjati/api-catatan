@@ -31,3 +31,11 @@ export async function editCategory(id, data) {
   });
   return updateCategory;
 }
+
+// Hapus Data
+export async function hapuscategory(id) {
+  const buangKategori = await prisma.kategori.delete({
+    where: { id },
+  });
+  return buangKategori;
+}
