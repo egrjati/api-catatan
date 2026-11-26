@@ -1,10 +1,10 @@
 import prisma from "../src/lib/prisma.js";
 const kategoriAwal = [
-  { nama: "Makanan", warna: "#F4845F" },
-  { nama: "Minuman", warna: "#7B9CFF" },
-  { nama: "Transport", warna: "#4ECDC4" },
-  { nama: "Camilan", warna: "#FFE14D" },
-  { nama: "Barang", warna: "#C3B1F5" },
+  { namaCategory: "Makanan", warna: "#F4845F" },
+  { namaCategory: "Minuman", warna: "#7B9CFF" },
+  { namaCategory: "Transport", warna: "#4ECDC4" },
+  { namaCategory: "Camilan", warna: "#FFE14D" },
+  { namaCategory: "Barang", warna: "#C3B1F5" },
 ];
 
 async function main() {

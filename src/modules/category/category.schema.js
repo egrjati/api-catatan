@@ -1,7 +1,7 @@
 import * as z from "zod";
 
 export const createCategorySchema = z.object({
-  nama: z
+  namaCategory: z
     .string({
       error: (problem) =>
         problem.input === undefined ? "Nama wajib diisi" : "Nama harus text",
@@ -15,7 +15,7 @@ export const createCategorySchema = z.object({
       error: (problem) =>
         problem.input === undefined
           ? "Warna tidak boleh kosong"
-          : "Nama harus hex",
+          : "Warna harus hex",
     })
     .trim()
     .regex(/^#[0-9A-Fa-f]{6}$/, "Kode Hex tidak valid"),

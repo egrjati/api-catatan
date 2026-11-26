@@ -4,7 +4,7 @@ import prisma from "../../lib/prisma.js";
 export async function ambilSemua() {
   // array kategori
   const semuaKategori = await prisma.kategori.findMany({
-    orderBy: { nama: "asc" },
+    orderBy: { namaCategory: "asc" },
   });
   return semuaKategori;
 }
@@ -13,7 +13,7 @@ export async function ambilSemua() {
 export async function tambahCategory(data) {
   const dataKategori = await prisma.kategori.create({
     data: {
-      nama: data.nama,
+      namaCategory: data.nama,
       warna: data.warna,
     },
   });

@@ -24,7 +24,7 @@ model Pengeluaran {
 // 1 Kategori punya banyak pengeluaran
 model Kategori {
   id String @id @default(uuid())
-  nama String @unique
+  namaCategory String @unique
   warna String
   pengeluaran Pengeluaran[]
   createdAt DateTime @default(now())
