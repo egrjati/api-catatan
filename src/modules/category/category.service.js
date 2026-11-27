@@ -25,7 +25,7 @@ export async function editCategory(id, data) {
   const updateCategory = await prisma.kategori.update({
     where: { id },
     data: {
-      nama: data.nama,
+      namaCategory: data.namaCategory,
       warna: data.warna,
     },
   });
